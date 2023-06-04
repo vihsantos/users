@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Users.Model
 {
-    public class UsuarioModel
+    public class UsuarioModel : PrimaryKey
     {
         public string Nome { get; set; }
         public string Email { get; set; }
@@ -15,6 +15,8 @@ namespace Users.Model
         public DateTime DataCriacao { get; set; }
         public DateTime DataAtualizacao { get; set; }
         public List<TelefoneModel> telefones { get; set; }
+        public int PerfilID { get; set; }
         public PerfilModel Perfil { get; set; }
+        public EnderecoModel Endereco { get; set; }
     }
 }
