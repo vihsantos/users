@@ -61,9 +61,10 @@ a {
     border-radius: 10px;
     padding: 10px;
     width: 50%;
+    overflow-x: auto;
 }
 
-input[type=text] {
+input[type=text], input[type=password], .input_dd {
     height: 40px;
     border: 1px solid #747ce0;
     border-radius: 10px;
@@ -71,11 +72,11 @@ input[type=text] {
     margin-right: 5px;
 }
 
-    input[type=text]:focus {
+    input[type=text]:focus, input[type=password]:focus {
         outline: 1px solid #282c6b;
     }
 
-    input[type=text]::placeholder {
+    input[type=text]::placeholder, input[type=password]::placeholder {
         font-style: italic;
     }
 
@@ -96,7 +97,7 @@ label {
     margin-bottom: 10px;
 }
 
-#add {
+.add {
     padding: 10px;
     height: 40px;
     background-color: #747ce0;
@@ -106,7 +107,7 @@ label {
     font-weight: 400;
 }
 
-#cadastrar {
+.cadastrar {
     padding: 10px;
     height: 40px;
     background-color: #7de074;
@@ -117,7 +118,7 @@ label {
     margin: 10px;
 }
 
-#remover {
+.remover {
     padding: 10px;
     height: 40px;
     background-color: #bbbabb;
