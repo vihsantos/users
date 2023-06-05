@@ -54,17 +54,19 @@ a {
     min-height: 85vh;
     margin: 20px;
     border-radius: 10px;
+    overflow-x: hidden;
+    padding: 20px
 }
 
 .card__cadastro {
-    height: 85vh;
+    height:  85vh;
     border-radius: 10px;
     padding: 10px;
     width: 50%;
     overflow-x: auto;
 }
 
-input[type=text], input[type=password], .input_dd {
+input[type=text], input[type=password], input[type=number], .input_dd {
     height: 40px;
     border: 1px solid #747ce0;
     border-radius: 10px;
@@ -72,11 +74,11 @@ input[type=text], input[type=password], .input_dd {
     margin-right: 5px;
 }
 
-    input[type=text]:focus, input[type=password]:focus {
+    input[type=text]:focus, input[type=password]:focus, input[type=number]:focus {
         outline: 1px solid #282c6b;
     }
 
-    input[type=text]::placeholder, input[type=password]::placeholder {
+    input[type=text]::placeholder, input[type=password]::placeholder, input[type=number]::placeholder {
         font-style: italic;
     }
 
@@ -246,4 +248,51 @@ button:focus {
     justify-content: center;
     cursor: pointer;
     user-select: none;
+}
+.editar__user {
+    padding: 10px;
+    height: 40px;
+    background-color: #f7e47a;
+    border: 1px solid #d3b403;
+    border-radius: 10px;
+    color: #000000;
+    font-weight: bold;
+    margin:10px
+}
+
+.remover__user {
+    padding: 10px;
+    height: 40px;
+    background-color: #be2c2c;
+    border: 1px solid #631111;
+    border-radius: 10px;
+    color: #000000;
+    font-weight: bold;
+    margin: 10px
+}
+
+.card__user {
+    margin: 10px;
+    width: 355px;
+    padding: 10px;
+    border: 1px solid azure;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.user__item {
+    margin: 5px;
+    font-weight: bold;
+    color: #282c6b;
+}
+
+.circle__name {
+    width: 50px;
+    height: 50px;
+    background-color: #dcb2ec;
+    color: white;
+    border-radius: 100%;
 }
