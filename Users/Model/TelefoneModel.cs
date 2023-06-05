@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace Users.Model
 {
+    [Serializable]
     public class TelefoneModel : PrimaryKey
     {
         public int UsuarioID { get; set; }
