@@ -138,7 +138,7 @@ namespace Users
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_numero;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txt_numero;
 
         /// <summary>
         /// Controle txt_bairro.
@@ -193,5 +193,14 @@ namespace Users
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View View3;
+
+        /// <summary>
+        /// Controle gridUsers.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gridUsers;
     }
 }

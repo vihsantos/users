@@ -50,7 +50,7 @@
                         <div class="input__group col-4">
                             <label>Perfil</label>
                             <asp:DropDownList ID="DropDownList1" CssClass="input_dd" runat="server">
-                                <asp:ListItem Value="-1">Selecione o perfil</asp:ListItem>
+                                <asp:ListItem Value="0">Selecione o perfil</asp:ListItem>
                                 <asp:ListItem Value="1">Admin</asp:ListItem>
                                 <asp:ListItem Value="2">Supervisor</asp:ListItem>
                                 <asp:ListItem Value="3">Operador</asp:ListItem>
@@ -80,7 +80,7 @@
                     <div class="row">
                         <div class="input__group col-3">
                             <label>CEP</label>
-                            <input type="text" id="txt_cep" placeholder="00000-000" runat="server">
+                            <input id="txt_cep" type="text" placeholder="00000-000" runat="server">
                         </div>
                         <div class="input__group col-9">
                             <label>Logradouro</label>
@@ -92,11 +92,11 @@
                         </div>
                         <div class="input__group col-3">
                             <label>Numero</label>
-                            <input type="text" id="txt_numero" runat="server">
+                            <input type="number" id="txt_numero" min="0" runat="server">
                         </div>
                         <div class="input__group col-4">
                             <label>Bairro</label>
-                            <input type="text" id="txt_bairro" runat="server">
+                            <input type="text" id="txt_bairro" placeholder="Digite o bairro" runat="server">
                         </div>
                         <div class="input__group col-4">
                             <label>Cidade</label>
@@ -119,6 +119,38 @@
             </div>
         </asp:View>
         <asp:View ID="View3" runat="server">
+               <asp:GridView  id="gridUsers" runat="server" AutoGenerateColumns="false" >
+                   <Columns>
+                       <asp:BoundField ItemStyle-Width="150px" DataField="Nome" HeaderText="Nome" />
+                       <asp:BoundField ItemStyle-Width="150px" DataField="Email" HeaderText="Email" />
+                       <asp:BoundField ItemStyle-Width="150px" DataField="DataNascimento" HeaderText="Data de Nascimento" />
+                       <asp:BoundField ItemStyle-Width="150px" DataField="CPF" HeaderText="CPF" DataFormatString="{0:d}" />
+                       <asp:BoundField ItemStyle-Width="150px" DataField="Perfil.Descricao" HeaderText="Perfil" />
+                       <asp:TemplateField HeaderText="Editar">
+                            <ItemTemplate>
+                                <asp:Button ID="btnEditar" runat="server" CssClass="editar__user" OnClick="btnEditar_Click"
+                                CommandName="Editar" Text="Editar Usuário"
+                                    CommandArgument='<%# DataBinder
+                                    .Eval(Container.DataItem, "ID")%>' UseSubmitBehavior="False" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                       <asp:TemplateField HeaderText="Remover">
+                            <ItemTemplate>
+                                <asp:Button ID="btnRemover" runat="server" CssClass="remover__user" OnClick="btnRemover_Click"
+                                CommandName="Remover" Text="Remover Usuário"
+                                    CommandArgument='<%# DataBinder
+                                    .Eval(Container.DataItem, "ID")%>' UseSubmitBehavior="False" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                   </Columns>
+               </asp:GridView>
         </asp:View>
+        
     </asp:MultiView>
+    <script type="text/javascript">
+        function editar(valor) {
+            console.log(valor)
+        }
+
+    </script>
 </asp:Content>
